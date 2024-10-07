@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 **This repository is under construction.**
 
-This repository is designed as an example modeling Hub that follows the infrastructure guidelines laid out by the [Consortium of Infectious Disease Modeling Hubs](https://github.com/hubverse-org/). The example is documented in more detail [here](https://hubverse.io/en/latest/format/intro-data-formats.html#running-examples).
+This repository is designed as an example modeling Hub that follows the infrastructure guidelines laid out by the [Consortium of Infectious Disease Modeling Hubs](https://github.com/hubverse-org/). [The examples given in hubDocs](https://hubverse.io/en/latest/user-guide/intro-data-formats.html#running-examples) provide additional details.  
 
 The example model outputs that are provided here are adapted from forecasts submitted to the US COVID-19 Forecast Hub, but have been modified to provide examples of nowcasts. They should be viewed only as illustrations of the data formats, not as realistic examples of nowcasts and forecasts. In particular, scores calculated by comparing the model outputs to the target data will not give a meaningul measure of predictive skill.
 
