@@ -26,10 +26,10 @@ The example model outputs provided here are adapted from forecasts submitted to 
 To work with the data in R, you can use code like the following:
 
 ```{r}
-library(hubUtils)
+library(hubData)
 library(dplyr)
 
-model_outputs <- hubUtils::connect_hub(hub_path = ".") %>%
+model_outputs <- hubData::connect_hub(hub_path = ".") %>%
     dplyr::collect()
 head(model_outputs)
 

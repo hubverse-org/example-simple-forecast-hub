@@ -7,17 +7,17 @@
 
 This repository is designed as an example modeling Hub that follows the
 infrastructure guidelines laid out by the [Consortium of Infectious
-Disease Modeling
-Hubs](https://github.com/hubverse-org/). The example
-is documented in more detail
-[here](https://hubverse.io/en/latest/format/intro-data-formats.html#running-examples).
+Disease Modeling Hubs](https://github.com/hubverse-org/). [The examples
+given in
+hubDocs](https://hubverse.io/en/latest/user-guide/intro-data-formats.html#running-examples)
+provide additional details.
 
-The example model outputs that are provided here are adapted from
-forecasts submitted to the US COVID-19 Forecast Hub, but have been
-modified to provide examples of nowcasts. They should be viewed only as
+The example model outputs provided here are adapted from forecasts
+submitted to the US COVID-19 Forecast Hub but have been modified to
+provide examples of nowcasts. They should be viewed only as
 illustrations of the data formats, not as realistic examples of nowcasts
 and forecasts. In particular, scores calculated by comparing the model
-outputs to the target data will not give a meaningul measure of
+outputs to the target data will not give a meaningful measure of
 predictive skill.
 
 ## Working with the data
@@ -25,10 +25,18 @@ predictive skill.
 To work with the data in R, you can use code like the following:
 
 ``` r
-library(hubUtils)
+library(hubData)
 library(dplyr)
+#> 
+#> Attaching package: 'dplyr'
+#> The following objects are masked from 'package:stats':
+#> 
+#>     filter, lag
+#> The following objects are masked from 'package:base':
+#> 
+#>     intersect, setdiff, setequal, union
 
-model_outputs <- hubUtils::connect_hub(hub_path = ".") %>%
+model_outputs <- hubData::connect_hub(hub_path = ".") %>%
     dplyr::collect()
 head(model_outputs)
 #> # A tibble: 6 × 8
