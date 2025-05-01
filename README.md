@@ -9,7 +9,7 @@ This repository is designed as an example modeling Hub that follows the
 infrastructure guidelines laid out by the [Consortium of Infectious
 Disease Modeling Hubs](https://github.com/hubverse-org/). Additional
 details are provided in [the examples given in
-hubDocs](https://hubverse.io/en/latest/user-guide/intro-data-formats.html#running-examples).
+hubDocs](https://docs.hubverse.io/en/latest/user-guide/intro-data-formats.html#running-examples).
 
 The example model outputs provided here are adapted from forecasts
 submitted to the US COVID-19 Forecast Hub but have been modified to
