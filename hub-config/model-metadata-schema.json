@@ -78,7 +78,6 @@
         "team_abbr",
         "model_name",
         "model_abbr",
-        "model_contributors",
         "license",
         "designated_model",
         "methods"

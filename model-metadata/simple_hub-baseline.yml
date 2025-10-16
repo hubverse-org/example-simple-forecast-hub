@@ -1,0 +1,7 @@
+team_name: "Simple Forecast Hub"
+team_abbr: "simple_hub"
+model_name: "Baseline model using reported weekly admissions"
+model_abbr: "baseline"
+license: "CC-BY-4.0"
+methods: "This is a baseline model."
+designated_model: true

@@ -1,0 +1,7 @@
+team_name: "UMass Amherst"
+team_abbr: "UMass"
+model_name: "Gradient boosted macine"
+model_abbr: "gbq"
+license: "CC-BY-4.0"
+methods: "This is a gbq model."
+designated_model: true
