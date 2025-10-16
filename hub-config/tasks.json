@@ -1,5 +1,5 @@
 {
-    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v3.0.0/tasks-schema.json",
+    "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.1.0/tasks-schema.json",
     "rounds": [{
             "round_id_from_variable": true,
             "round_id": "origin_date",
@@ -79,9 +79,9 @@
                 },
                 "output_type": {
                     "mean": {
+                        "is_required": false,
                         "output_type_id": {
-                            "required": null,
-                            "optional": ["NA"]
+                            "required": null
                         },
                         "value": {
                             "type": "integer",
@@ -89,6 +89,7 @@
                         }
                     },
                     "quantile": {
+                        "is_required": false,
                         "output_type_id": {
                             "required": [
                                 0.01,
@@ -114,8 +115,7 @@
                                 0.95,
                                 0.975,
                                 0.99
-                            ],
-                            "optional": null
+                            ]
                         },
                         "value": {
                             "type": "integer",

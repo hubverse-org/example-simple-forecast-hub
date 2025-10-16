@@ -1,0 +1,7 @@
+team_name: "UMass Amherst"
+team_abbr: "UMass"
+model_name: "Auto-regressive model"
+model_abbr: "ar"
+license: "CC-BY-4.0"
+methods: "This is an auto-regressive model."
+designated_model: true
