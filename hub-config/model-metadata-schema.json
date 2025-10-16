@@ -1,0 +1,86 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Schema for Example Simple Forecast Hub model metadata",
+    "description": "This is the schema for model metadata files.",
+    "type": "object",
+    "properties": {
+        "team_name": {
+            "description": "The name of the team submitting the model",
+            "type": "string"
+        },
+        "team_abbr": {
+            "description": "Abbreviated name of the team submitting the model",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_+]+$",
+            "maxLength": 16
+        },
+        "model_name": {
+            "description": "The name of the model",
+            "type": "string"
+        },
+        "model_abbr": {
+            "description": "Abbreviated name of the model",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_+]+$",
+            "maxLength": 16
+        },
+        "model_contributors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "affiliation": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "orcid": {
+                        "type": "string",
+                        "pattern": "^\\d{4}\\-\\d{4}\\-\\d{4}\\-[\\dX]{4}$"
+                    }
+                },
+                "additionalProperties": false,
+                "required": ["name", "affiliation"]
+            }
+        },
+        "license": {
+            "description": "License for use of model output data",
+            "type": "string",
+            "enum": [
+                "CC0-1.0",
+                "CC-BY-4.0",
+                "CC-BY_SA-4.0",
+                "CC-BY-NC-SA-4.0",
+                "PPDL",
+                "ODC-by",
+                "ODbL",
+                "OGL-3.0"
+            ]
+        },
+        "designated_model": {
+            "description": "Team-specified indicator for whether the model should be eligible for inclusion in a Hub ensemble and public visualization. A team may designate up to two models.",
+            "type": "boolean"
+        },
+        "methods": {
+            "description": "A brief (200 char.) description of the methods used by this model",
+            "type": "string",
+            "maxLength": 200
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "team_name",
+        "team_abbr",
+        "model_name",
+        "model_abbr",
+        "model_contributors",
+        "license",
+        "designated_model",
+        "methods"
+    ]
+}
