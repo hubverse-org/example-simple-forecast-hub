@@ -28,7 +28,7 @@ library(hubData)
 library(dplyr)
 
 model_outputs <- hubData::connect_hub(hub_path = ".") |> 
-    dplyr::collect()
+    hubData::collect_hub()
 model_outputs
 
 ts_target_data <- hubData::connect_target_timeseries() |> 
