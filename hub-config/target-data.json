@@ -1,0 +1,9 @@
+{
+  "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v6.0.0/target-data-schema.json",
+  "observable_unit": [
+    "target",
+    "time_idx",
+    "location"
+  ],
+  "date_col": "time_idx"
+}

@@ -15,8 +15,6 @@ knitr::opts_chunk$set(
 
 # Example Simple Forecast Hub
 
-**This repository is under construction.**
-
 This repository is designed as an example modeling Hub that follows the infrastructure guidelines laid out by the [Consortium of Infectious Disease Modeling Hubs](https://github.com/hubverse-org/). Additional details are provided in [the examples given in hubDocs](https://docs.hubverse.io/en/latest/user-guide/intro-data-formats.html#running-examples).  
 
 The example model outputs provided here are adapted from forecasts submitted to the US COVID-19 Forecast Hub but have been modified to provide examples of nowcasts. They should be viewed only as illustrations of the data formats, not as realistic examples of nowcasts and forecasts. In particular, scores calculated by comparing the model outputs to the target data will not give a meaningful measure of predictive skill.
@@ -29,10 +27,17 @@ To work with the data in R, you can use code like the following:
 library(hubData)
 library(dplyr)
 
-model_outputs <- hubData::connect_hub(hub_path = ".") %>%
-    dplyr::collect()
-head(model_outputs)
+model_outputs <- hubData::connect_hub(hub_path = ".") |> 
+    hubData::collect_hub()
+model_outputs
 
-target_data <- read.csv("target-data/covid-hospitalizations.csv")
-head(target_data)
+ts_target_data <- hubData::connect_target_timeseries() |> 
+  dplyr::collect()
+ts_target_data |> 
+  dplyr::filter(location == 25) |> 
+  dplyr::arrange(desc(time_idx))
 ```
+
+One slightly unusual aspect to these data are that the model outputs use `origin_date` and `horizon` to indicate the date for which a forecast is made. The time-scale is days, so a prediction with `origin_date` of `2022-12-08` and `horizon` of `-6` corresponds to a prediction for `2022-12-02`. There is no one task-id column in the model output files that corresponds to this "target date". In the time-series target data file, there is the `time_idx` column, which does correspond to the date being predicted.
+
+We note that this set-up, while valid according to the hubverse standards, might not work out of the box with downstream tools (e.g., predtimechart for the dashboards) without additional pre-processing. An alternative to this set-up could be to include the column of `time_idx` in the model-output files as a task id variables as well.
