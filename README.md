@@ -34,7 +34,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 
 model_outputs <- hubData::connect_hub(hub_path = ".") |> 
-    dplyr::collect()
+    hubData::collect_hub()
 model_outputs
 #> # A tibble: 13,608 × 8
 #>    origin_date horizon location target output_type output_type_id value model_id
